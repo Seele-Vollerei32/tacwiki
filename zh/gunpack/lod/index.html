@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>降低渲染压力的低精度模型 | 永恒枪械工坊</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="永恒枪械工坊帮助文档">
+    
+    <link rel="preload" href="/assets/css/0.styles.8f3dca9f.css" as="style"><link rel="preload" href="/assets/js/app.07ceaf31.js" as="script"><link rel="preload" href="/assets/js/2.049e3171.js" as="script"><link rel="preload" href="/assets/js/1.70084184.js" as="script"><link rel="preload" href="/assets/js/28.154ac9a8.js" as="script"><link rel="prefetch" href="/assets/js/10.b2ca5b2b.js"><link rel="prefetch" href="/assets/js/11.2b74b556.js"><link rel="prefetch" href="/assets/js/12.5816de56.js"><link rel="prefetch" href="/assets/js/13.4ae8cdc6.js"><link rel="prefetch" href="/assets/js/14.71770a62.js"><link rel="prefetch" href="/assets/js/15.f816c1a1.js"><link rel="prefetch" href="/assets/js/16.02cd4362.js"><link rel="prefetch" href="/assets/js/17.2c48ed4f.js"><link rel="prefetch" href="/assets/js/18.8f67e51b.js"><link rel="prefetch" href="/assets/js/19.ba7fe73d.js"><link rel="prefetch" href="/assets/js/20.fdbc8384.js"><link rel="prefetch" href="/assets/js/21.08e99c2b.js"><link rel="prefetch" href="/assets/js/22.4394b15d.js"><link rel="prefetch" href="/assets/js/23.e331b072.js"><link rel="prefetch" href="/assets/js/24.c5546440.js"><link rel="prefetch" href="/assets/js/25.85650ea9.js"><link rel="prefetch" href="/assets/js/26.937283b9.js"><link rel="prefetch" href="/assets/js/27.9926aaf1.js"><link rel="prefetch" href="/assets/js/29.ba5a2dfc.js"><link rel="prefetch" href="/assets/js/3.f33fec3e.js"><link rel="prefetch" href="/assets/js/30.ef2535a3.js"><link rel="prefetch" href="/assets/js/31.e36f61e2.js"><link rel="prefetch" href="/assets/js/32.72161aea.js"><link rel="prefetch" href="/assets/js/33.7925b18d.js"><link rel="prefetch" href="/assets/js/34.92f45d41.js"><link rel="prefetch" href="/assets/js/35.e4c76a76.js"><link rel="prefetch" href="/assets/js/36.f93d9e5b.js"><link rel="prefetch" href="/assets/js/37.6adfcff1.js"><link rel="prefetch" href="/assets/js/38.ad84db08.js"><link rel="prefetch" href="/assets/js/39.5d5b30af.js"><link rel="prefetch" href="/assets/js/4.68deb6b5.js"><link rel="prefetch" href="/assets/js/40.34b4fa2e.js"><link rel="prefetch" href="/assets/js/41.e56ad795.js"><link rel="prefetch" href="/assets/js/42.e064385b.js"><link rel="prefetch" href="/assets/js/43.881e3ea5.js"><link rel="prefetch" href="/assets/js/44.d01abf27.js"><link rel="prefetch" href="/assets/js/45.0a54fe46.js"><link rel="prefetch" href="/assets/js/46.55a9d6c4.js"><link rel="prefetch" href="/assets/js/47.69d765e5.js"><link rel="prefetch" href="/assets/js/5.8a0cb5a0.js"><link rel="prefetch" href="/assets/js/6.67385796.js"><link rel="prefetch" href="/assets/js/7.c91f2a17.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.f34bf77b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8f3dca9f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/zh/" class="home-link router-link-active"><!----> <span class="site-name">永恒枪械工坊</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/" class="nav-link">
+  en-US
+</a></li><li class="dropdown-item"><!----> <a href="/zh/gunpack/lod/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  zh-CN
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/" class="nav-link">
+  en-US
+</a></li><li class="dropdown-item"><!----> <a href="/zh/gunpack/lod/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  zh-CN
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/zh/" aria-current="page" class="sidebar-link">永恒枪械工坊</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/zh/gunpack/" class="sidebar-heading clickable router-link-active open"><span>枪包说明文档</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/gunpack/first_gunpack/" class="sidebar-link">创建第一个枪包</a></li><li><a href="/zh/gunpack/language/" class="sidebar-link">创建并使用语言文件</a></li><li><a href="/zh/gunpack/first_gun/" class="sidebar-link">创建第一把枪</a></li><li><a href="/zh/gunpack/gun_positioning/" class="sidebar-link">调整枪械模型定位组</a></li><li><a href="/zh/gunpack/hud_icon/" class="sidebar-link">为枪械创建 HUD Icon</a></li><li><a href="/zh/gunpack/gun_sound/" class="sidebar-link">添加枪械音效</a></li><li><a href="/zh/gunpack/gun_extra_damage/" class="sidebar-link">额外伤害</a></li><li><a href="/zh/gunpack/ammo/" class="sidebar-link">创建弹药</a></li><li><a href="/zh/gunpack/shell_ejection/" class="sidebar-link">抛壳</a></li><li><a href="/zh/gunpack/muzzle_flash/" class="sidebar-link">枪口火焰</a></li><li><a href="/zh/gunpack/hand_pos/" class="sidebar-link">手臂定位组</a></li><li><a href="/zh/gunpack/animation/" class="sidebar-link">动画制作规范</a></li><li><a href="/zh/gunpack/ica/" class="sidebar-link">/zh/gunpack/ica/</a></li><li><a href="/zh/gunpack/bolt_type/" class="sidebar-link">/zh/gunpack/bolt_type/</a></li><li><a href="/zh/gunpack/attachment/" class="sidebar-link">添加配件</a></li><li><a href="/zh/gunpack/gun_refit/" class="sidebar-link">枪械改装支持</a></li><li><a href="/zh/gunpack/lod/" aria-current="page" class="active sidebar-link">降低渲染压力的低精度模型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/zh/gunpack/lod/#枪械的低精度模型" class="sidebar-link">枪械的低精度模型</a></li></ul></li><li><a href="/zh/gunpack/recipe/" class="sidebar-link">合成配方</a></li><li><a href="/zh/gunpack/tag/" class="sidebar-link">/zh/gunpack/tag/</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/zh/model_guide/" class="sidebar-heading clickable"><span>模型建造指南</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="降低渲染压力的低精度模型"><a href="#降低渲染压力的低精度模型" class="header-anchor">#</a> 降低渲染压力的低精度模型</h1> <p>由于枪械模型的精度普遍较高，动辄几百块的模型对于游戏来说是会带来很大的渲染压力，尤其是很多玩家喜欢把枪挂在墙上，这样枪一多就会导致非常恐怖的性能占用，为了解决这一点，我们可以使用低精度模型用作展示。低精度模型不是必须的，但是推荐做了以减缓游戏压力。</p> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p>低精度模型的适用场景：第三人称手持，物品展示框内，以掉落物的形式出现在地面上; 高精度模型的适用场景：第一人称手持，枪械制作台里旋转展示</p></div> <h2 id="枪械的低精度模型"><a href="#枪械的低精度模型" class="header-anchor">#</a> 枪械的低精度模型</h2> <p><img src="/assets/img/lod_m4a1.c3640750.png" alt="高精度模型"> <img src="/assets/img/lod_m4a1_lod.06dbe52f.png" alt="低精度模型"></p> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p>低精度模型的块数不宜太多，控制在50以内是极好的</p></div> <p>当你完成了低精度模型的建模时，导出基岩版模型和相关贴图，这里以 m4a1 为例。</p> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p>做自己的低精度模型时在命名上不要和高精度模型搞混了，建议低精度模型的模型和贴图都加上&quot;_lod&quot;的后缀</p></div> <h3 id="给lod建模"><a href="#给lod建模" class="header-anchor">#</a> 给lod建模</h3> <p>比较推荐的方法是复制一份高精度模型然后对照着做</p> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p>低精度模型也应该保留各个定位组
+<a href="/zh/gunpack/gun_positioning/">调整枪械模型定位组</a>
+由于不在第一人称渲染，因此不需要第一人称的手臂定位组</p></div> <h3 id="添加lod"><a href="#添加lod" class="header-anchor">#</a> 添加lod</h3> <p>此时你应该已经有了如下材料：</p> <ul><li>低模：m4a1_geo.json</li> <li>贴图：m4a1.png</li></ul> <ol><li>找到 models/gun 目录，创建一个新的文件夹 lod ，把 m4a1_geo.json 放进去</li> <li>找到 textures/gun 目录，创建一个新的文件夹 lod ，把 m4a1.png 放进去</li></ol> <p>此时你的目录视图应该是这样的：</p> <div class="language- extra-class"><pre class="language-text"><code>tutorial_gun_pack
+└─ tutorial
+   ├─ textures
+   │  └─ gun
+   │    └─ lod
+   │      └─ m4a1.png
+   ├─ models
+   │  └─ gun
+   │    └─ lod
+   │      └─ m4a1_geo.json
+</code></pre></div><h3 id="修改枪械效果文件"><a href="#修改枪械效果文件" class="header-anchor">#</a> 修改枪械效果文件</h3> <p>找到你的枪械效果文件（guns/display目录下），这里还是以m4a1为例，找到 m4a1_display.json 并往里面添加以下内容：</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token comment">//调用低模</span>
+    <span class="token property">&quot;lod&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">//你的低精度模型路径</span>
+        <span class="token property">&quot;model&quot;</span><span class="token operator">:</span> <span class="token string">&quot;tutorial:gun/lod/m4a1_geo&quot;</span><span class="token punctuation">,</span>
+        <span class="token comment">//你的低精度模型贴图路径</span>
+        <span class="token property">&quot;texture&quot;</span><span class="token operator">:</span> <span class="token string">&quot;tutorial:gun/lod/m4a1&quot;</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><p>做完这些后启动游戏（或者游戏内使用 /tacz reload ）。
+如果你看到如下画面，证明枪械低精度模型添加成功了。
+<img src="/assets/img/lod_m4a1_finish.191f723b.png" alt="完成"></p> <p>最后，如果你恰好安装了 cloth config 模组，你可以在游戏里按下 alt + T 打开配置菜单，在这里面可以设置低模的渲染距离（单位是格），在这个距离以内还是渲染高精度模型，在此之外就是低模了。
+<img src="/assets/img/lod_config.5dbb4020.png" alt="配置"></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/zh/gunpack/gun_refit/" class="prev">
+        枪械改装支持
+      </a></span> <span class="next"><a href="/zh/gunpack/recipe/">
+        合成配方
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.07ceaf31.js" defer></script><script src="/assets/js/2.049e3171.js" defer></script><script src="/assets/js/1.70084184.js" defer></script><script src="/assets/js/28.154ac9a8.js" defer></script>
+  </body>
+</html>
